@@ -23,7 +23,7 @@ const addBlog = async ({
   try {
     // Upload new image to Cloudinary
     const result = await cloudinary.uploader.upload(blogImage.path, {
-      folder: `user/${author_id}/blog/${blogTitle.replace(/\s+/g, "_")}`, // Upload to a specific folder the same for folder in multer.js
+      folder: `vue-blog/user/${author_id}/blog/${blogTitle.replace(/\s+/g, "_")}`, // Upload to a specific folder the same for folder in multer.js
     });
 
     await cloudinary.uploader.destroy(blogImage.filename); //Delete local file
